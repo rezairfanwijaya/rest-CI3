@@ -109,7 +109,8 @@ class Prakmm1 extends REST_Controller {
         $userID = $this->delete('username');
 
         // query delete
-        $sql = "delete from akun_pengguna where user_id='$userID'";
+        $queryDeleteAkunPengguna = "delete from akun_pengguna where user_id='$userID'";
+        $queryDeleteDetailPengguna = "delete from detail_pengguna where user_id='$userID'";
 
         // find user by userID
         $user = $this->findUserByID($userID, "detail_pengguna");
@@ -119,13 +120,14 @@ class Prakmm1 extends REST_Controller {
         }
 
         // execute query
-        $delete = $this->db->query($sql);
+        $deleteAkunPengguna = $this->db->query($queryDeleteAkunPengguna);
+        $deleteDetailPengguna = $this->db->query($queryDeleteDetailPengguna);
         (
-            $delete
+            $deleteAkunPengguna && $deleteDetailPengguna
                 ?
             $this->response(array('status' => "success delete user with userID = $userID"), 200)
                 :
-            $this->response(array('status' => "failed, user with userID = $userID not found"), 404)
+            $this->response(array('status' => "failed, user with userID $userID not found"), 404)
         );
     }
 
