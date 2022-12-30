@@ -1,4 +1,2 @@
-# ci-restserver
-Check the recent version at https://github.com/chriskacerguis/codeigniter-restserver
-
-My alternate version https://github.com/ardisaurus/old-rest-ci
+## API DOCUMENTATION
+[Postman](https://documenter.getpostman.com/view/11940636/2s8Z6yXssE)
