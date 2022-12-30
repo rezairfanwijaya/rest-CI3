@@ -75,10 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'host.docker.internal',
+	// 'hostname' => '127.0.0.1',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'kontak',
+	'database' => 'sig_res',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
